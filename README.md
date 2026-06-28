@@ -45,27 +45,19 @@ The application calculates the final budget based on the following business rule
 
 ### 1) Base Price
 * **Basic:** 200 €
-
 * **Standard:** 450 €
-
 * **Full:** 800 €
-
 * **Premium:** 1200 €
 
 ### 2) Multipliers
 * **Company Lifetime:**
-
 * If >= 10 years: 0.9 factor (10% discount).
-
 * If < 10 years: 1.0 factor.
 
 * **Business Type:**
-
 * Freelancer (Autònom): 0.8 factor.
-
 * SME (PIME): 1.0 factor.
-
-Large Enterprise: 1.2 factor.
+* Large Enterprise: 1.2 factor.
 
 ### 3) Add-ons
 * **Social Media (XXSS):** +150 €
@@ -88,7 +80,6 @@ Large Enterprise: 1.2 factor.
 
 ### 5) Constraints
 * **Age:** Must be an integer between 0 and 150.
-
 * **Discount:** Must be a numeric value where 0 <= discount < basePrice.
 
 ## 📄 License
