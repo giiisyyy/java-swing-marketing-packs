@@ -39,6 +39,58 @@ mvn clean package
 java -cp target/marketing-packs-manager-1.0.0.jar marketing.PacksMarketing
 ```
 
+## 🧮 Calculation Logic
+
+The application calculates the final budget based on the following business rules:
+
+### 1) Base Price
+* **Basic:** 200 €
+
+* **Standard:** 450 €
+
+* **Full:** 800 €
+
+* **Premium:** 1200 €
+
+### 2) Multipliers
+* **Company Lifetime:**
+
+* If >= 10 years: 0.9 factor (10% discount).
+
+* If < 10 years: 1.0 factor.
+
+* **Business Type:**
+
+* Freelancer (Autònom): 0.8 factor.
+
+* SME (PIME): 1.0 factor.
+
+Large Enterprise: 1.2 factor.
+
+### 3) Add-ons
+* **Social Media (XXSS):** +150 €
+
+* **SEM Advertising:** +250 €
+
+### 4) Final Formula
+
+```text
+1. servicePrice = basePrice * lifetimeFactor * businessFactor
+
+2. servicePrice += extraXXSS + extraSEM
+
+3. taxableBase = servicePrice - promoDiscount
+
+4. vat = taxableBase * 0.21
+
+5. total = taxableBase + vat
+```
+
+### 5) Constraints
+* **Age:** Must be an integer between 0 and 150.
+
+* **Discount:** Must be a numeric value where 0 <= discount < basePrice.
+
 ## 📄 License
 
 This project is licensed under the MIT License - see the LICENSE file for details.
